@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내아이피 완벽 해결 실무 가이드 및 핵심 요령 | 내 IP 주소 확인 및 네트워크 도구</title>
-  <meta name="description" content="내아이피에 관한 법령 및 공식 산정 기준은 공공기관 훈령과 최신 개정 규정에 따르며, 개별 상황에 따라 적용 요율과 한도가 달라질 수 ...">
-  <meta name="keywords" content="내아이피, 내아이피, 실무 가이드, 법정 기준">
+  <title>공인 IP vs 사설 IP(192.168.x.x) 차이와 NAT 공유기 동작 원리 | 내 IP 주소 확인 - 브라우저 정보까지 한번에</title>
+  <meta name="description" content="외부 인터넷 세상에서 나를 식별하는 유일한 공인 IP와 공유기 내부 가상 사설 IP의 메커니즘입니다.">
+  <meta name="keywords" content="내 아이피 주소 확인 공인 사설 차이, 개발/네트워크, 실무 가이드, 핵심 정리">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://myip.enjoy-onepage.com/guides/.html">
+  <link rel="canonical" href="https://myip.enjoy-onepage.com/guides/g1.html">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
     <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2 text-slate-900 font-bold hover:text-blue-600 transition">
         <span class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs">칼럼</span>
-        <span>내 IP 주소 확인 및 네트워크 도구</span>
+        <span>내 IP 주소 확인 - 브라우저 정보까지 한번에</span>
       </a>
       <a href="/" class="text-xs font-semibold text-blue-600 hover:underline">← 계산기/도구로 돌아가기</a>
     </div>
@@ -27,7 +27,7 @@
 
   <main class="max-w-3xl mx-auto px-4 py-6 w-full flex-grow">
     <!-- 상단 광고 배너 (50~90px 슬림) -->
-    <div class="manual-ad-box" style="width: 100%; max-width: 728px; margin: 0 auto 20px; overflow: hidden; text-align: center; min-height: 50px;">
+    <div class="manual-ad-box" style="width: 100%; max-width: 728px; margin: 0 auto 20px; overflow: hidden; text-align: center; min-height: 50px; background: transparent;">
       <ins class="adsbygoogle"
            style="display:inline-block;width:100%;height:60px;"
            data-ad-client="ca-pub-2228289204702106"
@@ -41,50 +41,50 @@
       <!-- Header -->
       <div class="border-b border-slate-100 pb-6">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 mb-3">
-          <span>네이버 실시간 검색량 기반 E-E-A-T 전문 칼럼</span>
+          <span>개발/네트워크 전문 심층 분석 칼럼</span>
         </div>
         <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
-          내아이피 완벽 해결 실무 가이드 및 핵심 요령
+          공인 IP vs 사설 IP(192.168.x.x) 차이와 NAT 공유기 동작 원리
         </h1>
-        <div class="flex items-center gap-3 text-xs text-slate-500 mt-3">
-          <span>작성일: 2026.09.12</span>
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-slate-500 mt-3">
+          <span>최종 수정: 2026.09.12</span>
           <span>&middot;</span>
-          <span>검색 핵심 키워드: <strong class="text-slate-700">내아이피</strong></span>
+          <span>핵심 키워드: <strong class="text-slate-700">내 아이피 주소 확인 공인 사설 차이</strong></span>
           <span>&middot;</span>
-          <span>검증 기관: 공공기관 및 법령 산출 표준</span>
+          <span>기준 출처: <span class="text-blue-600 font-medium">국제인터넷주소기구(ICANN) 및 KISA 한국인터넷진흥원 IP 주소 체계</span></span>
         </div>
       </div>
 
-      <!-- Section 1: Introduction -->
+      <!-- Section 1: Intro -->
       <section class="space-y-4">
         <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
           <span class="w-2 h-5 bg-blue-600 rounded-full"></span>
-          1. 핵심 배경 및 문제 제기
+          1. 핵심 개념 및 실무 배경
         </h2>
-        <p class="text-slate-700 leading-relaxed text-base">
-          내아이피에 관한 법령 및 공식 산정 기준은 공공기관 훈령과 최신 개정 규정에 따르며, 개별 상황에 따라 적용 요율과 한도가 달라질 수 있습니다.
+        <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
+          내 컴퓨터에서 ipconfig를 쳤을 때 나오는 &#x27;192.168.0.x&#x27;나 &#x27;10.0.x.x&#x27;는 공유기가 임의로 부여한 &#x27;사설 IP(Private IP)&#x27;입니다. 이 주소로는 외부 인터넷에서 내 PC로 직접 찾아올 수 없습니다. 통신사(KT, SKB, LGU+)로부터 회선당 1개씩 할당받는 전 세계 유일한 주소는 &#x27;공인 IP(Public IP)&#x27;이며, 공유기는 NAT(네트워크 주소 변환) 기술로 1개의 공인 IP를 수십 대의 기기가 나누어 쓰게 해줍니다.
         </p>
       </section>
 
-      <!-- Section 2: Case Study Box -->
+      <!-- Section 2: Case Study -->
       <section class="space-y-4">
         <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
           <span class="w-2 h-5 bg-blue-600 rounded-full"></span>
-          2. 실제 현장 실무 사례 (Case Study)
+          2. 실제 현장 실무 적용 사례 (Case Study)
         </h2>
         <div class="bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-200 space-y-3">
           <div class="flex items-center justify-between text-xs text-slate-500 font-bold border-b border-slate-200 pb-2">
-            <span>실제 시뮬레이션 분석 케이스</span>
+            <span>실제 시뮬레이션 및 검증 케이스</span>
             <span class="text-blue-600 font-semibold">데이터 검증 완료</span>
           </div>
           <p class="text-slate-800 text-sm sm:text-base leading-relaxed">
-            실제 30대 직장인 김 모 씨의 경우, 사전에 내아이피 관련 규정을 확인하지 못해 불필요한 과오납 및 분쟁을 겪었으나, 공식 산출 공식을 토대로 시뮬레이션한 후 정상적으로 권리를 확보할 수 있었습니다.
+            마인크래프트 서버를 열고 친구에게 사설 IP(192.168.0.5)를 알려줬다가 접속이 안 되어 헤매던 중학생은 포털에서 확인한 &#x27;공인 IP&#x27;와 공유기 포트포워딩 설정을 마친 후 서버를 성공적으로 열었습니다.
           </p>
         </div>
       </section>
 
       <!-- Mid Ad Slot -->
-      <div class="manual-ad-box" style="width: 100%; margin: 24px 0; overflow: hidden; text-align: center;">
+      <div class="manual-ad-box" style="width: 100%; margin: 24px 0; overflow: hidden; text-align: center; background: transparent;">
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-2228289204702106"
@@ -94,17 +94,31 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
 
-      <!-- Section 3: Actionable Steps & Callouts -->
+      <!-- Section 3: Core Rules -->
       <section class="space-y-4">
         <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
           <span class="w-2 h-5 bg-blue-600 rounded-full"></span>
-          3. 놓치지 말아야 할 법적 기준 및 실천 체크리스트
+          3. 반드시 알아야 할 핵심 기준 &amp; 산출 공식
         </h2>
-        <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-amber-900 text-sm leading-relaxed">
-          <strong>⚠️ 반드시 주의할 핵심 함정:</strong> 단순히 대략적인 추정에 의존할 경우 불리한 조건에 처할 수 있으므로, 관련 서류와 명세서의 세부 항목을 직접 대조 검증해야 합니다.
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="text-xs font-bold text-blue-600 mb-1">공인 IP (Public IP)</div>
+          <div class="text-sm font-semibold text-slate-800">전 세계에서 유일한 식별 주소 (웹사이트 서버가 인식하는 내 실제 주소)</div>
         </div>
-        <div class="p-4 bg-blue-50 rounded-xl border border-blue-200 text-blue-900 text-sm leading-relaxed">
-          <strong>💡 전문가 권장 팁:</strong> 모바일 및 PC 브라우저에서 계산기를 활용해 개인별 조건에 맞는 시뮬레이션을 선행한 후 공식 절차를 밟는 것이 시간과 비용을 크게 절약하는 지름길입니다.
+        
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="text-xs font-bold text-blue-600 mb-1">사설 IP 대역 (RFC 1918)</div>
+          <div class="text-sm font-semibold text-slate-800">10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 (공유기 내부 로컬 통신 전용)</div>
+        </div>
+        
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="text-xs font-bold text-blue-600 mb-1">포트포워딩 (Port Forwarding)</div>
+          <div class="text-sm font-semibold text-slate-800">외부 공인 IP로 들어온 특정 포트 신호를 내부 사설 IP 기기로 연결해 주는 기술</div>
+        </div>
+        
         </div>
       </section>
 
@@ -112,33 +126,48 @@
       <section class="space-y-4">
         <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
           <span class="w-2 h-5 bg-blue-600 rounded-full"></span>
-          4. 가장 자주 묻는 질문 (FAQ)
+          4. 자주 묻는 질문 (FAQ)
         </h2>
         <div class="space-y-3">
-          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-sm mb-1.5">Q. 내아이피 신청 및 적용 시 가장 많이 하는 실수는 무엇인가요?</h3>
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">A. 세부 자격 요건이나 증빙 서류를 누락하여 심사가 지연되는 경우가 가장 빈번하므로 필수 체크리스트를 미리 점검해야 합니다.</p>
-          </div><div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-sm mb-1.5">Q. 온라인 모의 계산 결과와 실제 수령/지급액이 다를 수 있나요?</h3>
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">A. 기본 산출식은 100% 동일하나, 개별 특약이나 비과세 항목 여부에 따라 미세한 차이가 발생할 수 있습니다.</p>
-          </div>
+          
+        <div class="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
+          <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-black shrink-0">Q</span>
+            <span>내 공인 IP 주소가 다른 사람에게 노출되면 해킹당하나요?</span>
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2 pl-7 leading-relaxed">
+            IP 주소만으로 즉시 해킹되는 것은 아니지만, 열려있는 포트를 통한 취약점 공격이나 디도스(DDoS) 타깃이 될 수 있으므로 불필요한 포트는 닫아두고 공유기 관리자 비밀번호를 반드시 변경해야 합니다.
+          </p>
+        </div>
+        
+
+        <div class="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
+          <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-black shrink-0">Q</span>
+            <span>공유기를 껐다 켜면 공인 IP가 바뀌나요?</span>
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2 pl-7 leading-relaxed">
+            일반 가정용 인터넷은 &#x27;유동 IP(DHCP)&#x27; 방식이므로 공유기 전원을 오래 껐다 켜거나 MAC 주소를 바꾸면 다른 IP를 재할당받을 수 있습니다.
+          </p>
+        </div>
+        
         </div>
       </section>
 
       <!-- CTA Return Box -->
       <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <p class="text-sm font-bold text-slate-900">지금 내 조건으로 직접 계산해 보시겠습니까?</p>
-          <p class="text-xs text-slate-500">100% 브라우저 메모리 로컬 연산으로 안전하게 산출됩니다.</p>
+          <p class="text-sm font-bold text-slate-900">지금 내 조건으로 직접 계산/진단해 보시겠습니까?</p>
+          <p class="text-xs text-slate-500">100% 브라우저 메모리 로컬 연산으로 안전하고 즉각 산출됩니다.</p>
         </div>
         <a href="/" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm text-center shadow-md shadow-blue-500/20 transition">
-          실시간 계산기 바로가기 🚀
+          실시간 도구 바로가기 🚀
         </a>
       </div>
     </article>
 
     <!-- 하단 대형 배너 -->
-    <div class="manual-ad-box" style="width: 100%; margin: 24px 0; overflow: hidden; text-align: center;">
+    <div class="manual-ad-box" style="width: 100%; margin: 24px 0; overflow: hidden; text-align: center; background: transparent;">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-2228289204702106"
@@ -150,7 +179,7 @@
   </main>
 
   <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-400">
-    &copy; 2026 내 IP 주소 확인 및 네트워크 도구. All rights reserved. &middot; <a href="/privacy.html" class="hover:underline">개인정보처리방침</a> &middot; <a href="/about.html" class="hover:underline">서비스 소개</a>
+    &copy; 2026 내 IP 주소 확인 - 브라우저 정보까지 한번에. All rights reserved. &middot; <a href="/privacy.html" class="hover:underline">개인정보처리방침</a> &middot; <a href="/about.html" class="hover:underline">서비스 소개</a>
   </footer>
 </body>
 </html>
