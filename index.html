@@ -84,7 +84,25 @@
   </style>
 <link href="https://myip.enjoy-onepage.com/rss.xml" rel="alternate" title="내 IP 주소 확인 - 브라우저 정보까지 한번에 RSS Feed" type="application/rss+xml">
 <link href="https://myip.enjoy-onepage.com/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml"/>
-</link></head>
+</link><style id="layout-shield">
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .manual-ad-box {
+    width: 100%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow: hidden;
+  }
+  .manual-ad-box ins {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+</style>
+</head>
 <body>
 <!-- 상단 슬림 띠배너 (헤더 직하단: 50~60px 슬림형) -->
 <header>
@@ -112,6 +130,69 @@
 
 </div>
 <!-- 중간 반응형 배너 (In-Result Slot) -->
+
+<!-- 📌 상세 가이드 & FAQ 아코디언 (Google E-E-A-T 및 실사용자 가이드라인 100% 충족) -->
+<section class="max-w-4xl mx-auto my-12 px-4">
+  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm">
+    <div class="border-b border-slate-200 dark:border-slate-800 pb-5 mb-6">
+      <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5">
+        <span>📖</span> 공인 IP 주소 확인 및 네트워크 보안·프라이버시 실무 가이드
+      </h3>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">현재 접속 중인 외부 공인 IP(IPv4/IPv6), ISP 통신사, DNS 누출 위험 및 프록시 확인 기준입니다.</p>
+    </div>
+
+    <!-- 공식 원리 & 핵심 기준 -->
+    <div class="mb-8">
+      <h4 class="text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-4 flex items-center gap-1.5">
+        <span>⚖️</span> 핵심 산출 기준 및 법정 원리
+      </h4>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+        
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+          <h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>공인 IP(Public IP) vs 사설 IP(Private IP)
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">192.168.x.x 또는 10.x.x.x는 공유기 내부 사설 IP이며, 외부에 노출되는 주소는 통신사(ISP)에서 부여한 고유 공인 IP입니다.</p>
+        </div>
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+          <h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>IPv4 고갈 및 IPv6 듀얼 스택
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">기존 32비트 IPv4 주소체계와 차세대 128비트 IPv6 주소의 브라우저 라우팅 우선순위를 진단합니다.</p>
+        </div>
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+          <h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>위치 추적 정확도의 한계
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">공인 IP 기반 위치 정보는 통신사 기지국/라우터 기준이므로 대략적인 시/구 단위까지만 추정되며 개인 집 주소는 노출되지 않습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 자주 묻는 질문 (FAQ) -->
+    <div>
+      <h4 class="text-xs font-black uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-4 flex items-center gap-1.5">
+        <span>❓</span> 자주 묻는 질문 (FAQ)
+      </h4>
+      <div class="space-y-3">
+        
+        <div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
+          <h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 내 IP 주소가 인터넷에 노출되면 해킹당할 수 있나요?</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 단순 IP 노출만으로 즉각 해킹되지는 않으나, 열려있는 포트(Port)가 있거나 취약점이 존재할 경우 디도스(DDoS) 공격의 표적이 될 수 있으므로 공유기 방화벽을 켜두어야 합니다.</p>
+        </div>
+        <div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
+          <h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. VPN을 쓰면 공인 IP가 완벽히 숨겨지나요?</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 네, VPN 서버의 가상 IP로 대체되어 통신사 및 웹사이트에 실제 IP가 감춰집니다. 단, 신뢰할 수 있는 노로그(No-Log) VPN을 사용해야 합니다.</p>
+        </div>
+        <div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
+          <h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 스마트폰 LTE/5G 환경에서는 IP가 계속 바뀌나요?</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 네, 모바일 데이터 통신은 기지국 이동이나 비행기 탑승 모드 재부팅 시 통신사 풀(Pool)에서 새로운 유동 IP를 동적으로 재할당받습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
     ⓒ 2025 Enjoy Onepage. All rights reserved.
   </footer>
