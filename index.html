@@ -3,21 +3,57 @@
 <html lang="ko">
 <head>
 <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "내 IP 주소 확인 - 브라우저 정보까지 한번에",
-    "description": "지금 내 IP 주소와 브라우저 정보를 간단하게 확인하세요. 광고 없이 깔끔한 원페이지!",
-    "url": "https://myip.enjoy-onepage.com/",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript. Requires HTML5.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "KRW"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://myip.enjoy-onepage.com/#webapp",
+      "name": "내 IP 주소 확인",
+      "url": "https://myip.enjoy-onepage.com/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "description": "지금 내 IP 주소와 브라우저 정보를 간단하게 확인하세요. 광고 없이 깔끔한 원페이지!",
+      "image": "https://myip.enjoy-onepage.com/og-image.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://myip.enjoy-onepage.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "내 IP 주소가 인터넷에 노출되면 해킹당할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "단순 IP 노출만으로 즉각 해킹되지는 않으나, 열려있는 포트(Port)가 있거나 취약점이 존재할 경우 디도스(DDoS) 공격의 표적이 될 수 있으므로 공유기 방화벽을 켜두어야 합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "VPN을 쓰면 공인 IP가 완벽히 숨겨지나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, VPN 서버의 가상 IP로 대체되어 통신사 및 웹사이트에 실제 IP가 감춰집니다. 단, 신뢰할 수 있는 노로그(No-Log) VPN을 사용해야 합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "스마트폰 LTE/5G 환경에서는 IP가 계속 바뀌나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 모바일 데이터 통신은 기지국 이동이나 비행기 탑승 모드 재부팅 시 통신사 풀(Pool)에서 새로운 유동 IP를 동적으로 재할당받습니다."
+          }
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
 <link href="https://myip.enjoy-onepage.com/" rel="canonical"/>
 <meta charset="utf-8"/>
