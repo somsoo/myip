@@ -156,6 +156,15 @@
   }
 </style>
 <meta content="summary_large_image" name="twitter:card"/><meta content="내 IP 주소 확인 - 브라우저 정보까지 한번에" name="twitter:title"/><meta content="지금 내 IP 주소와 브라우저 정보를 간단하게 확인하세요. 광고 없이 깔끔한 원페이지!" name="twitter:description"/><meta content="https://myip.enjoy-onepage.com/og-image.png" name="twitter:image"/><style id="mobile-hardening-shield">
+  /* 모바일 한글 단어 단위 줄바꿈 보존 & 버튼 텍스트 단일행 쉴드 */
+  body, h1, h2, h3, h4, p, span, label {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  button, [role="button"], a.btn {
+    white-space: nowrap;
+    word-break: keep-all;
+  }
   @media (max-width: 640px) {
     input, select, textarea {
       font-size: 16px !important;
