@@ -42,19 +42,5 @@
       <description>43억 개로 한계에 달한 32비트 IPv4와 무제한 128비트 IPv6 구조 및 WebRTC IP 누수 방지 팁입니다.</description>
       <pubDate>Sat, 12 Sep 2026 02:15:00 +0900</pubDate>
     </item>
-    <item>
-      <title>공인 IP와 사설 IP(공유기 IP)의 차이점 완벽 정리 | 내 IP 주소 확인 및 네트워크 도구</title>
-      <link>https://myip.enjoy-onepage.com/guides/public-vs-private-ip.html</link>
-      <guid isPermaLink="true">https://myip.enjoy-onepage.com/guides/public-vs-private-ip.html</guid>
-      <description>192.168.x.x 대역의 내부 사설 IP와 외부 인터넷 식별용 공인 IP의 통신 원리를 해설합니다.</description>
-      <pubDate>Sat, 12 Sep 2026 02:30:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>IP 주소 노출 위험성과 VPN을 통한 개인정보 보호 | 내 IP 주소 확인 및 네트워크 도구</title>
-      <link>https://myip.enjoy-onepage.com/guides/vpn-ip-privacy-guide.html</link>
-      <guid isPermaLink="true">https://myip.enjoy-onepage.com/guides/vpn-ip-privacy-guide.html</guid>
-      <description>IP를 통해 파악될 수 있는 대략적인 위치 정보의 범위와 안전한 인터넷 사용 수칙을 안내합니다.</description>
-      <pubDate>Sat, 12 Sep 2026 02:45:00 +0900</pubDate>
-    </item>
   </channel>
 </rss>
