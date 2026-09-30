@@ -28,19 +28,5 @@
       <description>내 IP 주소 확인 - 브라우저 정보까지 한번에의 개인정보 보호 및 100% 브라우저 메모리 로컬 연산 보안 정책입니다.</description>
       <pubDate>Sat, 12 Sep 2026 01:10:00 +0900</pubDate>
     </item>
-    <item>
-      <title>공인 IP vs 사설 IP(192.168.x.x) 차이와 NAT 공유기 동작 원리 | 내 IP 주소 확인 - 브라우저 정보까지 한번에</title>
-      <link>https://myip.enjoy-onepage.com/guides/guide1.html</link>
-      <guid isPermaLink="true">https://myip.enjoy-onepage.com/guides/guide1.html</guid>
-      <description>외부 인터넷 세상에서 나를 식별하는 유일한 공인 IP와 공유기 내부 가상 사설 IP의 메커니즘입니다.</description>
-      <pubDate>Sat, 12 Sep 2026 02:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>IPv4 주소 고갈과 IPv6 전환 및 VPN 우회 시 실제 IP 보안 점검법 | 내 IP 주소 확인 - 브라우저 정보까지 한번에</title>
-      <link>https://myip.enjoy-onepage.com/guides/guide2.html</link>
-      <guid isPermaLink="true">https://myip.enjoy-onepage.com/guides/guide2.html</guid>
-      <description>43억 개로 한계에 달한 32비트 IPv4와 무제한 128비트 IPv6 구조 및 WebRTC IP 누수 방지 팁입니다.</description>
-      <pubDate>Sat, 12 Sep 2026 02:15:00 +0900</pubDate>
-    </item>
   </channel>
 </rss>
