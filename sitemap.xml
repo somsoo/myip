@@ -12,4 +12,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://myip.enjoy-onepage.com/public-vs-private-ip.html</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
 </urlset>
